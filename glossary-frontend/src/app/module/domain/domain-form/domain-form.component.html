@@ -1,0 +1,12 @@
+<form class="form" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && onSubmit()">
+    
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Domain Name" formControlName="name" [errorStateMatcher]="matcher">
+        <mat-hint>Domain Name is Mandatory!</mat-hint>
+        <mat-error *ngIf="hasError('name','required')"> Name is <strong> required </strong> </mat-error>
+    </mat-form-field>
+
+    <div class="margin-bottom-25"></div>
+    <button mat-raised-button color="primary" type="submit"> Submit </button>
+
+</form>

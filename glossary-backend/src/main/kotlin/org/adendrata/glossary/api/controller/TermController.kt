@@ -5,9 +5,13 @@ import org.adendrata.glossary.api.service.TermService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin
 @RestController
 @RequestMapping("term")
 class TermController(private val service: TermService) {
+
+    @GetMapping
+    fun findAll() = ResponseEntity.ok(service.findAll())
 
     @GetMapping("{id}")
     fun getOne(@PathVariable id: Long) = ResponseEntity.ok(service.getOne(id))

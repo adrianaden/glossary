@@ -9,10 +9,17 @@ import org.springframework.stereotype.Service
 interface TermRepository : JpaRepository<Term, Long>
 
 @Service
-class TermService(private val repository: TermRepository) {
+class TermService(private val repository: TermRepository,
+                  private val termDomainService: TermDomainService) {
+
+    fun findAll() = repository.findAll();
+
     fun getOne(id: Long) = repository.getOne(id)
 
-    fun create(term: Term) = repository.save(term)
+    fun create(term: Term) : Term {
+        term.termDomains?.forEach { x -> termDomainService.create(x) }
+        return repository.save(term)
+    }
 
     fun update(id: Long, term: Term) = repository.save(term.copy(id = id))
 

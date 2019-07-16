@@ -1,5 +1,6 @@
 package org.adendrata.glossary.api.entity
 
+import org.springframework.lang.Nullable
 import javax.persistence.*
 
 @Entity
@@ -17,6 +18,9 @@ data class Term(
         var pronoun: String,
 
         @Column(name = "definition")
-        var definition: String
+        var definition: String,
+
+        @Transient
+        var termDomains: List<TermDomain>?
 
 )

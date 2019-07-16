@@ -5,12 +5,16 @@ import org.adendrata.glossary.api.service.DomainService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin
 @RestController
 @RequestMapping("domain")
 class DomainController(private val service: DomainService) {
 
     @GetMapping("{id}")
     fun getOne(@PathVariable id: Long) = ResponseEntity.ok(service.getOne(id))
+
+    @GetMapping
+    fun findAll() = ResponseEntity.ok(service.findAll())
 
     @PostMapping
     fun create(@RequestBody body: Domain) = ResponseEntity.ok(service.create(body))

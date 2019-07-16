@@ -10,6 +10,9 @@ interface TermDomainRepository : JpaRepository<TermDomain, Long>
 
 @Service
 class TermDomainService(private val repository: TermDomainRepository) {
+
+    fun findAll() = repository.findAll();
+
     fun getOne(id: Long) = repository.getOne(id)
 
     fun create(term: TermDomain) = repository.save(term)

@@ -12,6 +12,8 @@ interface DomainRepository : JpaRepository<Domain, Long>
 class DomainService(private val repository: DomainRepository) {
     fun getOne(id: Long) = repository.getOne(id)
 
+    fun findAll() : List<Domain> = repository.findAll()
+
     fun create(domain: Domain) = repository.save(domain)
 
     fun update(id: Long, domain: Domain) = repository.save(domain.copy(id = id))

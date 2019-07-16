@@ -28,3 +28,5 @@ HELP.mad
 ### VS Code ###
 .vscode/
 
+/glossary-frontend/dist/
+/glossary-frontend/node_modules/

@@ -1,0 +1,3 @@
+<button mat-raised-button color="primary" (click)="onCreateClick()">Add</button> Domain
+<div class="margin-bottom-25"></div>
+<data-table *ngIf="dataSource" [columns]="columns" [dataSet]="dataSource" (eventRecordClick)="onRecordClick($event)"></data-table>
