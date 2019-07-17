@@ -1,5 +1,9 @@
-export interface Term{
+import { TermDomain } from './term-domain.model';
+
+export class Term{
     id : number
     name: string
-    definition: string;
+    pronoun: string
+    definition: string
+    termDomains: TermDomain[]
 }

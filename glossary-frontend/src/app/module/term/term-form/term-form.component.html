@@ -1,0 +1,23 @@
+<form class="form" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && onSubmit()">
+    
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Name" formControlName="name" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="hasError('name','required')"> Name is <strong> required </strong> </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-select placeholder="Pronoun" formControlName="pronoun" [errorStateMatcher]="matcher">
+            <mat-option *ngFor="let pronoun of pronouns" [value]="pronoun"> {{ pronoun }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('pronoun','required')"> Pronoun is <strong> required </strong> </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Definition" formControlName="definition" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="hasError('definition','required')"> Definition is <strong> required </strong> </mat-error>
+    </mat-form-field>
+
+    <div class="margin-bottom-25"></div>
+    <button mat-raised-button color="primary" type="submit"> Submit </button>
+
+</form>

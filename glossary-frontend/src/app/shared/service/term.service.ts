@@ -10,4 +10,22 @@ export class TermService{
     findAll() : Observable<Term[]> {
         return this.httpClient.get<Term[]>('http://localhost:8080/glossary/api/term');
     }
+    findById(id: number): Observable<Term> {
+        return this.httpClient.get<Term>('http://localhost:8080/glossary/api/term/' + id);
+    }
+    create(domain: Term): Observable<Term> {
+        return this.httpClient.post<Term>('http://localhost:8080/glossary/api/term', domain);
+    }
+
+    update(domain: Term): Observable<Term> {
+        return this.httpClient.put<Term>('http://localhost:8080/glossary/api/term/' + domain.id, domain);
+    }
+
+    createOrUpdate(domain: Term): Observable<Term> {
+        if (domain.id) {
+            return this.update(domain)
+        } else {
+            return this.create(domain)
+        }
+    }
 }
