@@ -1,0 +1,25 @@
+<form class="form" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && onSubmit()">
+    
+    <mat-form-field class="full-width">
+        <mat-select placeholder="Term" formControlName="termId" [errorStateMatcher]="matcher">
+            <mat-option *ngFor="let term of terms" [value]="term.id"> {{ term.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('termId','required')"> Term is <strong> required </strong> </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-select placeholder="Domain" formControlName="domainId" [errorStateMatcher]="matcher">
+            <mat-option *ngFor="let domain of domains" [value]="domain.id"> {{ domain.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('domainId','required')"> Term is <strong> required </strong> </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Definition" formControlName="definition" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="hasError('definition','required')"> Definition is <strong> required </strong> </mat-error>
+    </mat-form-field>
+
+    <div class="margin-bottom-25"></div>
+    <button mat-raised-button color="primary" type="submit"> Submit </button>
+
+</form>

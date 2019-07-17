@@ -29,6 +29,7 @@ import { TermDomainService } from './shared/service/term-domain.service';
 import { DomainFormComponent } from './module/domain/domain-form/domain-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TermFormComponent } from './module/term/term-form/term-form.component';
+import { TermDomainFormComponent } from './module/term-domain/term-domain-form/term-domain-form.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { TermFormComponent } from './module/term/term-form/term-form.component';
     DomainComponent,
     DataTableComponent,
     DomainFormComponent,
-    TermFormComponent
+    TermFormComponent,
+    TermDomainFormComponent
   ],
   imports: [
     BrowserModule,
