@@ -1,3 +1,11 @@
-<button mat-raised-button color="primary" (click)="onCreateClick()">Add</button> Term Domain
+<div>
+    <div class="section-10">
+        <button mat-raised-button color="primary" (click)="onCreateClick()">Create</button>
+    </div>
+    <div class="section-90 right">
+        <search-bar></search-bar>
+    </div>
+</div>
+
 <div class="margin-bottom-25"></div>
 <data-table *ngIf="dataSource" [columns]="columns" [dataSet]="dataSource" (eventRecordClick)="onRecordClick($event)"></data-table>

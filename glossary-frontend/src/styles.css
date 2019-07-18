@@ -11,10 +11,21 @@ body {
 }
 
 .form {
-    min-width: 150px;
-    width: 100%;
-  }
+  min-width: 150px;
+  width: 100%;
+}
   
-  .full-width {
-    width: 100%;
-  }
+.full-width {
+  width: 100%;
+}
+.section-10 {
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+}
+
+.section-90 {
+  display: inline-block;
+  vertical-align: top;
+  width: 90%;
+}

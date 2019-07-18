@@ -15,6 +15,7 @@ import {
   MatTableModule, 
   MatPaginatorModule, 
   MatSortModule,
+  MatAutocompleteModule,
   MatProgressSpinnerModule,MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule
 } from '@angular/material';
 import { AdminComponent } from './module/admin/admin.component';
@@ -30,6 +31,8 @@ import { DomainFormComponent } from './module/domain/domain-form/domain-form.com
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TermFormComponent } from './module/term/term-form/term-form.component';
 import { TermDomainFormComponent } from './module/term-domain/term-domain-form/term-domain-form.component';
+import { SearchBarComponent } from './component/search-bar/search-bar.component';
+import { BoldPipe } from './bold.pipe';
 
 
 @NgModule({
@@ -43,7 +46,9 @@ import { TermDomainFormComponent } from './module/term-domain/term-domain-form/t
     DataTableComponent,
     DomainFormComponent,
     TermFormComponent,
-    TermDomainFormComponent
+    TermDomainFormComponent,
+    SearchBarComponent,
+    BoldPipe,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { TermDomainFormComponent } from './module/term-domain/term-domain-form/t
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
+    MatAutocompleteModule,
     MatProgressSpinnerModule,MatFormFieldModule,MatOptionModule,MatSelectModule
   ],
   providers: [DomainService, TermService, TermDomainService],
